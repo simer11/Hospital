@@ -1,0 +1,36 @@
+h1{
+    font-size: 50px;
+    color: cornsilk;
+    text-align: center;
+}
+label {
+    font-size: 35px;
+    color:darkblue;
+    margin-left: 30%;
+    display: block;
+    margin-bottom: 5px;
+    
+}
+
+input {
+    margin-left: 30%;
+    width: 30%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.buttons{
+    text-align: center;
+    padding-bottom: 10px;
+    padding-right: 10%;
+}
+    
+
