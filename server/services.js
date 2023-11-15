@@ -5,8 +5,8 @@ const DATABASE_FILE = path.join(__dirname + '/../server/files/data.txt');
 
 var services = function(app){
     app.post('/write-record',function(req, res){
-        var id = 'lib'+Date.now();
-console.log("its working");
+        var id = 'hos'+Date.now();
+
         var hospitalData = {
             id: id,
             patientId:req.body.patientId,
@@ -72,6 +72,36 @@ console.log("its working");
 
     });
 
+    app.get("/delete-row/:id",function(req,res){
+        const rowId = parseInt(req.params.id);
+        if(fs.existsSync(DATABASE_FILE)){
+            fs.readFile(DATABASE_FILE,'utf8',(err,data)=>{
+                if(err){
+                    res.send(JSON.stringify({msg:err}));
+
+                }else{
+                    let hospitalData = JSON.parse(data);
+                    if (rowId >= 0 && rowId < hospitalData.length){
+                        hospitalData = hospitalData.filter((row, index)=> index !== rowId);
+
+                        fs.writeFile(DATABASE_FILE,JSON.stringify(hospitalData),'utf8',(err)=>{
+                            if(err){
+                                res.send(JSON.stringify({msg:err
+                                }));
+                            }else{
+                                res.send(JSON.stringify({msg:'success',hospitalData}));
+                            }
+                        })
+
+                        }
+                    }
+                }
+            
+        )}}
+        );
+
+
+       
 
 
 };

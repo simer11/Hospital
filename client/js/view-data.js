@@ -42,14 +42,27 @@ console.log(jsonObject);
         htmlString +="<td>" +  jsonObject[i].patientId + "</td>";
         htmlString +="<td>" +  jsonObject[i].patientName + "</td>";
         htmlString +="<td>" +  jsonObject[i].patientAge+ "</td>";
-        htmlString +="<td>" +  jsonObject[i].doctorReffered + "</td>";
         htmlString +="<td>" +  jsonObject[i].patientPhNo + "</td>";
         htmlString +="<td>" +  jsonObject[i].patientProblem+ "</td>";
-
+        htmlString +="<td>" +  jsonObject[i].doctorReffered + "</td>";
+        htmlString += "<td><button onclick='deleteRow(" + i + ")'>Delete</button></td>";
 
         htmlString +="</tr>";
     }
     
     $('#hospitalTable').html(htmlString);}
 
+    function deleteRow(rowID) {
+        $.ajax({
+            url: 'http://localhost:3000/delete-row/' + rowID,
+            type: "delete",
+            success: function (response) {
+                retrieveData();
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    }
+    
   //showTable();

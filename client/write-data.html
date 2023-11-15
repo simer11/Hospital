@@ -22,44 +22,41 @@
         </nav>
         </nav>
     </header>
-    <h1>enter the data enteries</h1>
+    <h1>enter the patient details</h1>
     <form id="data-form">
-        <div>
+        
             <label for="patientId">Patient Id</label>
-            <input type="text" id="PatientId" name="PatientId">
+            <input type="number" placeholder="numbers only" id="PatientId" name="PatientId" required>
             
-            <label for="patientName">Patient Name</label>
-            <input type="text" id="patientName" name="patientName">
+            <label for="patientName">Name</label>
+            <input type="text" id="patientName" name="patientName" required>
         
-                    <label for="patientAge">Patient Age</label>
-            <input type="text" id="patientAge" name="patientAge">
+                    <label for="patientAge">Age</label>
+            <input type="number" id="patientAge" name="patientAge" required>
             
-             <label for="patientPhNo">Patient Phone NO</label>
-            <input type="text" id="patientPhNo" name="patientPhNo">
+             <label for="patientPhNo">Phone NO</label>
+            <input type="number" id="patientPhNo" name="patientPhNo" required>
         
-             <label for="patientProblem">Patient problem</label>
-            <input type="text" id="patientProblem" name="patientProblem">
+             <label for="patientProblem">problem</label>
+            <input type="text" id="patientProblem" name="patientProblem" required>
         
             
             <label for="doctorReffered">Doctor Reffered</label>
-            <input type="text" id="doctorReffered" name="doctorReffered">
-        
-       
+            <select id="doctorReffered" name="doctorReffered" required>
+                <option value="Dr Rajesh Kumar">Dr Rajesh Kumar </option>
+                <option value="Dr Harikrishan">Dr Harikrishan</option>
+                <option value="Dr Steven">Dr Steven</option>
+                <option value="Dr Adam">Dr Adam</option>
+                <option value="Dr Edison">Dr Edison</option>
+            </select>
             
-            </div>
-           
-            <div class="buttons">
-            <button type="button" id="submit-button">Submit</button></div>
-        <div class="buttons">
+        
+            
+            <button type="button" id="submit-button">Submit</button>
+        
             <button type="button" id="clear-button">Clear</button>
-                </div>
+               
         </form>
-        
-        
-        
-    
-    
-    
     
 </body>
 </html>
