@@ -72,7 +72,7 @@ var services = function(app){
 
     });
 
-    app.get("/delete-row/:id",function(req,res){
+    app.delete("/delete-row/:id",function(req,res){
         const rowId = parseInt(req.params.id);
         if(fs.existsSync(DATABASE_FILE)){
             fs.readFile(DATABASE_FILE,'utf8',(err,data)=>{
